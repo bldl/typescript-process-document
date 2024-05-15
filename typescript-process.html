@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<style>
+  html {
+    font-family: sans-serif;
+  }
+
+  th, td {
+    vertical-align: top;
+    border: 1px solid black;
+    padding: 0.4em;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  #stages {
+    table-layout: fixed;
+    width: 100%;
+  }
+  #stages th:first-child {
+    width: 55px;
+  }
+
+  ul {
+    padding: 0 1.5em;
+    margin: 0;
+  }
+  
+  .unsure {
+	  color: Tomato;
+  }
+  
+  .remark {
+	  color: #686868;
+	  background-color: #DCDCDC;
+	  font-style: italic;
+	  font-weight: bold;
+	  font-size: smaller;
+  }
+  
+  .term {
+	  font-style: italic;
+	  text-decoration: underline dotted;
+  }
+  
+  .stage {
+	  font-style: italic;
+  }
+  
+  .tc39stage {
+	  font-weight: bold;
+  }
+  
+  
+  .checkthis {
+	  color: white;
+	  background-color: magenta;
+	  font-weight: bold;
+  }
+  
+  .githublabel {
+  	 font-family: monospace;
+  }
+  
+  .code {
+	  font-family: monospace;
+  }
+</style>
+
+<title>The TypeScript Evolution Process Document (Draft)</title>
+
+<h1>The TypeScript Evolution Process Document (Draft, 15th May 2024)</h1>
+
+<p>Authors: <b><a href="https://github.com/asborv">Asbjørn Olav Orvedal</a></b> (University of Bergen, Norway), <b><a href="https://github.com/mikbar-uib">Mikhail Barash</a></b> (University of Bergen, Norway).
+<p>Private GitHub repository with this document: <a href="https://github.com/bldl/typescript-process-document"><span class="code">https://github.com/bldl/typescript-process-document</span></a>.
+
+<h2>Stages</h2>
+
+<ul>
+<li> Stage names below are based on the <a href="https://github.com/microsoft/TypeScript/wiki/Contributing-to-TypeScript#issue-tracking-101"><i>Contributing to TypeScript</i> wiki page</a> and the issue <a href="https://github.com/microsoft/TypeScript/labels">labels</a> in the <a href="https://github.com/microsoft/TypeScript">TypeScript GitHub repository</a>.
+<li> Notions / terms are formatted as <span class="term">underlined (dotted) text</span>.
+<li> Parts of this draft document that require further confirmation are formatted as <span class="unsure">tomato-colored text</span>.
+<li> This document's authors' remarks are formatted as <span class="remark">gray-highlighted bold italic text</span>. 
+</ul>
+
+<table id="stages">
+  <caption>The TypeScript Suggestion/Proposal Stages</caption>
+
+  <thead>
+    <tr>
+      <th>TC39 Equiv.
+      <th colspan="2">Stage
+      <th>Purpose
+      <th>Entrance Criteria
+      <th>Expected Outcomes
+	  <th><span class="unsure">Spec</span> Quality at Entrance
+	  <th>Post-Stage Changes Expected
+	  <th>Implementation Expected
+	  <th>Expected Feedback from Users
+    </tr>
+  </thead>
+
+  <tr>
+    <td><span class="tc39stage"><a href="https://tc39.es/process-document/">0</a></span>
+    <td colspan="2"><span class="stage"><a href="https://github.com/Microsoft/TypeScript/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3A%22Suggestion%22+-label%3A%22Needs+Proposal%22+-label%3A%22Needs+More+Info%22+-label%3A%22In+Discussion%22+-label%3A%22Visual+Studio%22+-label%3A%22Revisit%22+-label%3A%22Accepting+PRs%22+-label%3A%22Committed%22">Untriaged</a></span>
+    <td>Allow community members to <a href="https://github.com/microsoft/TypeScript/wiki/TypeScript-Design-Goals">come up</a> with new feature <span class="term">suggestions</span>. Open discussions and consider authoring a more detailed <span class="term">proposal</span>.
+    <td>None
+	<td><span class="term">TypeScript Design Team</span> will discuss this <span class="term">suggestion</span>, or request a <span class="term">proposal</span>.
+	<td>N/A
+	<td>Major
+	<td>None
+	<td>Considerable. <p>Discussions at this stage happen in public <a href="https://github.com/microsoft/TypeScript/labels/Suggestion">Github issue threads</a>.
+  </tr>
+  
+  <tr>
+    <td rowspan="7"><span class="tc39stage"><a href="https://tc39.es/process-document/">1</a></span>, <span class="tc39stage"><a href="https://tc39.es/process-document/">2</a></span>
+    <td colspan="2"><span class="stage"><a href="https://github.com/microsoft/TypeScript/issues?q=is%3Aissue+label%3A%22In+Discussion%22">In Discussion</a></span>
+    <td><span class="term">TypeScript Design Team</span> <a href="https://github.com/microsoft/TypeScript/issues?q=label:%22Design+Notes%22+">discusses</a> the <span class="term">suggestion</span>.
+    <td><span class="remark">What are the entrance criteria?</span><p><span class="remark">It seems that a <span class="term">proposal</span> does not necessarily have to exist at this stage.</span>
+	<td><span class="term">TypeScript Design Team</span> has <span class="unsure">internal</span> discussions. <p><span class="term">TypeScript Design Team</span> has accepted the <span class="unsure"><span class="term">proposal</span></span>/<span class="unsure"><span class="term">feature</span></span>, and <span class="term">implementation</span> may begin.
+	<td><span class="unsure">(Early) Draft</span>
+	<td>Major
+	<td>None
+	<td>None. <p>However, the GitHub issue for the <span class="term">suggestion</span> remains open, allowing for further comments.
+  </tr>
+  
+  
+  <tr>
+    <!-- <td> -->
+    <td rowspan="6"><span class="stage">On Hold</span>
+	<td><span class="stage"><a href="https://github.com/microsoft/TypeScript/issues?q=is%3Aissue+label%3A%22Awaiting+More+Feedback%22">Awaiting More Feedback</a></span>
+    <td>Wait for <span class="term">feedback</span> from <span class="unsure">community members</span> who would benefit from the <span class="term">suggestion</span>.
+    <td><span class="term">TypeScript Design Team</span> must gather more <span class="term">feedback</span> from <span class="unsure">community members</span> in order to make a decision.
+	<td>The <span class="unsure">community</span> has voiced its opinion on the <span class="term">suggestion</span>, and <span class="term">TypeScript Design Team</span> may proceed with discussions.
+	<td><span class="remark">What is the spec quality at entrance?</span>
+	<td><span class="unsure">Major</span>
+	<td rowspan="6">None
+	<td><span class="unsure">Considerable. <p>This stage exists for community members to voice their opinions and conduct open discussions.</span>
+  </tr>
+  
+  <tr>
+    <!-- <td> -->
+    <!-- <td> -->
+	<td><span class="stage"><a href="https://github.com/microsoft/TypeScript/issues?q=is%3Aissue+label%3A%22Needs+Investigation%22">Needs Investigation</a></span>
+    <td>Allow a <span class="term">team member</span> to investigate the <span class="term">suggestion</span>.
+    <td><span class="remark">What are the entrance criteria?</span>
+	<td><span class="unsure">A direction for the design of the <span class="term">suggestion</span> will be worked out.</span>
+	<td><span class="remark">What is the spec quality at entrance?</span>
+    <td><span class="unsure">Major</span>
+    <!-- <td> -->
+	<td>None. <p>However, the GitHub issue for the <span class="term">suggestion</span> remains open, <span class="unsure">allowing further comments</span>.
+  </tr>
+    
+  <tr>
+    <!-- <td> -->
+    <!-- <td> -->
+	<td><span class="stage"><a href="https://github.com/microsoft/TypeScript/issues?q=is%3Aissue+label%3A%22Needs+Proposal%22">Needs Proposal</a></span>
+    <td>Request that a detailed and <span class="term">formal proposal</span> <a href="https://github.com/microsoft/TypeScript/wiki/Writing-Good-Design-Proposals">be authored</a> for the <span class="term">suggestion</span>. The <span class="term">proposal</span> will be used to more accurately evaluate the <span class="term">suggestion</span>.
+    <td><span class="remark">What are the entrance criteria?</span>
+	<td>A <span class="term">proposal</span> has been authored by the original author or <a href="https://github.com/microsoft/TypeScript/issues/202#issuecomment-49829643">another person</a>.
+	<td><span class="unsure">Draft.</span> <p>The <a href="https://github.com/microsoft/TypeScript/blob/main/.github/ISSUE_TEMPLATE/feature_request.yml">template</a> is filled out, but is too imprecise / incomplete / informal for <span class="term">TypeScript Design Team</span> to properly evaluate.
+    <td>Major
+    <!-- <td> -->
+	<td>None. <p>However, the GitHub issue for the <span class="term">suggestion</span> remains open, <span class="unsure">allowing further comments</span>.
+  </tr>
+  
+  <tr>
+    <!-- <td> -->
+    <!-- <td> -->
+	<td><span class="stage"><a href="https://github.com/microsoft/TypeScript/issues?q=is%3Aissue+label%3A%22Needs+More+Info%22">Needs More Info</a></span>
+    <td>Address questions in the <span class="term">proposal</span>.
+    <td>Questions have been identified regarding the <span class="term">suggestion</span>, and they have been relayed to the author. 	<td>The questions have been addressed, and discussions may continue.
+	<td><span class="unsure">Draft.</span> <p>A <span class="term">formal proposal</span> exists, but has unresolved questions.
+    <td><span class="unsure">Major</span>
+    <!-- <td> -->
+	<td>None. <p>However, the GitHub issue for the <span class="term">suggestion</span> remains open, <span class="unsure">allowing further comments</span>.
+  </tr>
+  
+  <tr>
+    <!-- <td> -->
+    <!-- <td> -->
+	<td><span class="stage"><a href="https://github.com/microsoft/TypeScript/issues?q=is%3Aissue+label%3A%22Waiting+for+TC39%22">Waiting for TC39</a></span>
+    <td>Signal that the <span class="term">suggestion</span> is not actionable before <a href="https://tc39.es/">TC39</a> has reached some conclusion on a <span class="term">related proposal</span>.
+    <td>A <span class="term">related proposal</span> which will impact the design of this <span class="term">suggestion</span> is <a href="https://github.com/tc39/proposals">under consideration</a> by the TC39 committee.
+	<td>TC39 has reached a conclusion, making this <span class="term">suggestion</span> actionable.
+	<td><span class="unsure">N/A</span>
+    <td><span class="unsure">N/A</span>
+    <!-- <td> -->
+	<td>None. <p>However, the GitHub issue for the <span class="term">suggestion</span> remains open, <span class="unsure">allowing further comments</span>.
+  </tr>
+  
+  <tr>
+    <!-- <td> -->
+    <!-- <td> -->
+	<td><span class="stage"><a href="https://github.com/microsoft/TypeScript/issues?q=is%3Aissue+label%3ARevisit">Revisit</a></span>
+    <td>Signal that a <span class="term">suggestion</span> that has been put on hold earlier, is now worth reconsidering.
+    <td><span class="remark">What are the entrance criteria?</span>
+	<td>The <span class="term">suggestion</span> has been taken back into discussion.
+	<td><span class="remark">What is the spec quality at entrance?</span>
+    <td><span class="unsure">(Very)</span> Major
+    <!-- <td> -->
+	<td><span class="remark">What feedback is expected from users?</span>
+  </tr>
+  
+  
+  
+  
+  
+  
+ 
+  
+  <tr>
+    <td rowspan="3"><span class="tc39stage"><a href="https://tc39.es/process-document/">2.7</a></span>, <span class="tc39stage"><a href="https://tc39.es/process-document/">3</a></span>
+    <td colspan="2"><span class="stage">Ready to Implement</span>
+    <td>Signal that the <span class="term">proposal</span> is complete and accepted, and that work on the <span class="term">implementation</span> may begin.
+    <td>Design of the <span class="term">suggestion</span> is complete. <span class="remark">What is the exact definition of "complete"?</span> <p><span class="term">TypeScript Design Team</span> accepts the <span class="term">feature</span>. <span class="remark">How exactly does this happen?</span>
+	<td>The <span class="term">implementation</span> will start.
+	<td><span class="unsure">Complete</span>
+	<td>None <span class="unsure">/ Limited (only critical changes - based on the implementation experience)</span>
+	<td><span class="remark">Does the <span class="term">implementation</span> work only start here? <p>Are <span class="term">experimental implementations</span> solicited from the community?</span>
+	<td>None. <p>However, the GitHub issue for the <span class="term">suggestion</span> remains open, <span class="unsure">allowing further comments</span>.
+  </tr>
+  
+  <tr>
+    <!-- <td> -->
+    <td colspan="2"><span class="stage"><a href="https://github.com/microsoft/TypeScript/issues?q=is%3Aissue+label%3ACommitted">Committed</a></span>
+    <td><span class="term">TypeScript Design Team</span> has allocated time to write an <span class="term">implementation</span> of the <span class="term">suggested feature</span>.
+    <td><span class="remark">What are the entrance criteria?</span>
+	<td rowspan="2">The <span class="term">implementation</span> is complete. <span class="remark">What is the exact definition of "complete"? There are <a href="https://github.com/microsoft/TypeScript/tree/main/tests">tests in the TypeScript repository</a>, they do not seem to be explicitly mentioned in the <a href="https://github.com/microsoft/TypeScript/wiki/Contributing-to-TypeScript#issue-tracking-101">wiki page</a>, but are mentioned in the <a href="https://github.com/Microsoft/TypeScript/blob/main/CONTRIBUTING.md">Instructions for logging issues</a>.</span>
+	<td rowspan="2"><span class="unsure">Complete</span>
+	<td rowspan="2">None <span class="unsure">/ Limited (only critical changes - based on the implementation experience)</span>
+	<td rowspan="2">Complete
+	<td rowspan="2">None. <p>However, the GitHub issue for the <span class="term">suggestion</span> remains open, <span class="unsure">allowing further comments</span>.
+  </tr>
+  
+  <tr>
+    <!-- <td> -->
+    <td colspan="2"><span class="stage"><a href="https://github.com/microsoft/TypeScript/issues?q=is%3Aissue++label%3A%22Help+Wanted%22+">Help Wanted</a></span>
+    <td><span class="term">TypeScript Design Team</span> requests help with implementing the <span class="term">feature</span>, accepting <a href="https://github.com/microsoft/TypeScript/pulls?q=is%3Apr+">Pull Requests</a> with <span class="term">full implementation</span>.
+    <td><span class="remark">What are the entrance criteria?</span>
+	<!-- <td> -->
+	<!-- <td> -->
+	<!-- <td> -->
+	<!-- <td> -->
+	<!-- <td> -->
+  </tr>
+  
+  
+  <tr>
+    <td><span class="tc39stage"><a href="https://tc39.es/process-document/">4</a></span>
+    <td colspan="2"><span class="stage"><a href="https://github.com/microsoft/TypeScript/issues?q=is%3Aissue+label%3AFixed">Fixed</a></span>
+    <td>Signal that <span class="term">implementation</span> is complete, and that the <a href="https://github.com/microsoft/TypeScript/pulls?q=is%3Apr+">Pull Request</a> has been <a href="https://github.com/microsoft/TypeScript/labels?q=Fixed">merged</a>.
+    <td><span class="term">Implementation</span> is complete, <span class="unsure">and the requirements for it are fulfilled.</span> <span class="remark">Does this mean that the implementation passes the <a href="https://github.com/microsoft/TypeScript/tree/main/tests">tests</a>?</span>
+	<td><span class="unsure">The <span class="term">proposal</span> will be <a href="https://github.com/microsoft/TypeScript/wiki/TypeScript-Deployment">shipped</a> in <a href="https://github.com/Microsoft/TypeScript/wiki/Roadmap">an upcoming version of TypeScript</a>.</span>
+	<td><span class="unsure">Final</span>
+	<td>None
+	<td>Shipping
+	<td>None
+  </tr>
+  
+  
+  
+  <tr>
+    <td><a href="https://github.com/tc39/proposals/blob/main/inactive-proposals.md">N/A</a>
+    <td colspan="2"><span class="stage"><a href="https://github.com/microsoft/TypeScript/issues?q=is%3Aissue+label%3ADeclined+">Declined</a></span>
+    <td><span class="term">TypeScript Design Team</span> has declined the <span class="term">suggestion</span> / <span class="term">proposal</span>, for one of the following reasons: <a href="https://github.com/microsoft/TypeScript/issues?q=is%3Aissue+label%3A%22Out+of+Scope%22+">Out of Scope</a>, <a href="https://github.com/microsoft/TypeScript/issues?q=is%3Aissue+label%3A%22Too+Complex%22+">Too Complex</a>, <a href="https://github.com/microsoft/TypeScript/issues?q=is%3Aissue+label%3A%22Breaking+Change%22+">Breaking Change</a>, <a href="https://github.com/microsoft/TypeScript/issues?q=is%3Aissue+label%3A%22Working+as+Intended%22+">Working As Intended</a>, or <a href="https://github.com/microsoft/TypeScript/issues?q=is%3Aissue+label%3A%22Design+Limitation%22">Design Limitation</a>.
+    <td><span class="term">TypeScript Design Team</span> declines the feature. <span class="remark">How exactly does this happen?</span>
+	<td>The <span class="term">suggestion</span> will not be considered further.
+	<td>N/A
+	<td>N/A
+	<td>N/A
+	<td>None
+  </tr>
+  
+</table>
